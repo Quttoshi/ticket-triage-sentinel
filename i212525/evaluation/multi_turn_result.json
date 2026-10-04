@@ -1,0 +1,23 @@
+{
+  "session_id": "multi-turn-8daa628b91b4",
+  "model": "gpt-4.1-mini",
+  "turns": [
+    {
+      "user": "Please close my ticket.",
+      "status": "needs_clarification",
+      "stop_reason": "clarification_requested",
+      "agent": "Please provide the ticket ID you want to close.",
+      "tools": []
+    },
+    {
+      "user": "T108",
+      "status": "completed",
+      "stop_reason": "goal_completed",
+      "agent": "Ticket T108 has been closed as you requested.",
+      "tools": [
+        "get_ticket#1:success",
+        "set_ticket_status#1:success"
+      ]
+    }
+  ]
+}

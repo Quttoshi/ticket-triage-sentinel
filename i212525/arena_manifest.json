@@ -1,0 +1,28 @@
+{
+  "arena_version": "0.1",
+  "agent_name": "TicketTriage Sentinel",
+  "domain": "Support-Ticket Triage",
+  "description": "Bounded agent that reads a sandbox support queue, triages tickets (category, priority, team), saves draft replies and sets sandbox status; refunds, deletions and emails require human approval.",
+  "endpoint": "/arena/run",
+  "health_endpoint": "/health",
+  "implementation": "ticket-triage-sentinel",
+  "model_provider": "openai",
+  "tools": ["search_tickets", "get_ticket", "triage_ticket", "draft_reply", "set_ticket_status"],
+  "restricted_tools": ["issue_refund", "delete_customer_account", "send_email"],
+  "statuses": ["completed", "needs_clarification", "blocked", "approval_required", "tool_error", "contract_error", "budget_exceeded", "failed"],
+  "fault_types": [
+    "none",
+    "tool_timeout",
+    "malformed_tool_output",
+    "invalid_agent_decision"
+  ],
+  "limits": {
+    "max_steps": 6,
+    "max_tool_retries": 2,
+    "max_repairs": 2,
+    "run_timeout_seconds": 40,
+    "max_output_tokens": 512,
+    "max_history_messages": 12,
+    "max_response_bytes": 50000
+  }
+}
