@@ -1,4 +1,4 @@
-# TicketTriage Sentinel — Agent Arena (Assignment 1)
+# TicketTriage Sentinel - Agent Arena (Assignment 1)
 
 A bounded, single-agent **support-ticket triage** service built on FastAPI + LangChain + OpenAI.
 Given a support request, the agent finds the right ticket in a **sandbox queue**, reads it,
